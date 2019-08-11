@@ -1,0 +1,15 @@
+<div class="main-box">
+  <h1 *ngIf="showIntro">
+    welcome to your adventure!
+  </h1>
+
+  <h1 *ngIf="showIntro">
+    press <a (click)="clickStart()" class="active-text start-button">&lt;start&gt;</a> to continue
+  </h1>
+
+  
+
+  <h1 *ngIf="!showIntro">
+    <a (click)="clickQuit()" class="active-text quit-button">&lt;quit&gt;</a>
+  </h1>
+</div>
