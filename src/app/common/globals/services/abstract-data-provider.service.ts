@@ -9,13 +9,10 @@ import { Observable } from 'rxjs';
 export class AbstractDataProviderService {
   private apiUrl: string = null;
 
-  constructor(private _constant: ConstantsService, private http: HttpClient) { }
+  constructor(private constant: ConstantsService, private http: HttpClient) { }
 
   public get(params?: any, headers?: any): Observable<any> {
-    return this.http.get(this.apiUrl, {
-      params: params,
-      headers: headers,
-    });
+    return this.http.get(this.apiUrl, { params, headers, });
   }
 
   /**
@@ -24,7 +21,7 @@ export class AbstractDataProviderService {
    */
 
   public setApiUrl(url: string): void {
-    this.apiUrl = this._constant.apiUrl + url;
+    this.apiUrl = this.constant.apiUrl + url;
     console.log(`api with path ${this.apiUrl} is connected`)
   }
 }

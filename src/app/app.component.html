@@ -7,9 +7,10 @@
     press <a (click)="clickStart()" class="active-text start-button">&lt;start&gt;</a> to continue
   </h1>
 
-  
+  <app-game-field *ngIf="!showIntro"></app-game-field>
 
-  <h1 *ngIf="!showIntro">
-    <a (click)="clickQuit()" class="active-text quit-button">&lt;quit&gt;</a>
-  </h1>
+  <div *ngIf="!showIntro" class="quit-box">
+    <app-menu></app-menu>
+    <h1><a (click)="clickQuit()" class="active-text quit-button">&lt;quit&gt;</a></h1>
+  </div>
 </div>
